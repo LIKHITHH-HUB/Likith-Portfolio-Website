@@ -1,38 +1,546 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: radial-gradient(circle at top, #1e0033, #090014);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.section {
+  padding: 120px 80px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between;
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+}
+
+/* BUTTON */
+.btn {
+  padding: 12px 25px;
+  border-radius: 30px;
+  background: linear-gradient(90deg,#a855f7,#ec4899);
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.btn:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 0 25px rgba(236,72,153,0.7);
+}
+
+.about-text {
+  font-size: 16px;              /* same as project */
+  line-height: 1.8;
+  font-weight: 400;             /* match project */
+  color: rgba(255,255,255,0.85); /* same tone */
+}
+
+.about-text:hover {
+  color: #ec4899;
+  transform: translateX(5px);
+}
+
+/* IMAGE BOX FIX */
+.about-box {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.about-img {
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+/* HERO ORB */
+/* .orbWrapper {
+  position: relative;
+  width: 420px;
+  height: 420px;
+}
+
+.orbGlow {
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  border: 2px solid rgba(168,85,247,0.3);
+  animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.6; }
+}
+
+.orbInner {
+  width: 380px;
+  height: 380px;
+  border-radius: 30px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(20px);
+} */
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.orbInner:hover .hero-img {
+  transform: perspective(1000px) rotateY(10deg) scale(1.05);
+}
+ .orbWrapper {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.orbGlow {
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  border: 2px solid rgba(168,85,247,0.3);
+  top: -40px;
+  left: -40px;
+  animation: pulse 3s infinite;
+}
+
+.orbInner {
+  width: 300px;
+  height: 300px;
+  border-radius: 25px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* IMPORTANT — IMAGE FULL COVER */
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-text {
+  transition: 0.3s;
+}
+
+.about-text:hover {
+  color: #ec4899;
+  transform: translateX(5px);
+}
+/* SKILLS */
+.glass.skillCard {
+  flex: 1;
+  padding: 30px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(20px);
+  transition: all 0.4s ease;
+}
+.glass.skillCard:hover {
+  transform: perspective(1000px) rotateX(8deg) rotateY(-8deg) scale(1.05);
+  box-shadow: 
+    0 20px 40px rgba(0,0,0,0.4),
+    0 0 40px rgba(168,85,247,0.6);
+}
+.glass.skillCard {
+  transform-style: preserve-3d;
+}
+
+
+
+
+/* PROJECT CARD */
+/* PROJECT SECTION */
+/* ================= PROJECT ROW ================= */
+.project-row {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-top: 60px;
+
+  padding: 25px 30px;
+  border-radius: 20px;
+
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(20px);
+
+  transition: 0.4s ease;
+}
+
+/* REAL 3D HOVER */
+.project-row:hover {
+  transform: perspective(1200px) rotateX(6deg) rotateY(-6deg) scale(1.02);
+  box-shadow:
+    0 30px 60px rgba(0,0,0,0.5),
+    0 0 60px rgba(168,85,247,0.6);
+}
+
+/* REVERSE */
+.project-row.reverse {
+  flex-direction: row-reverse;
+}
+
+/* ================= IMAGE ================= */
+.project-image img {
+  width: 80%;     /* ↓ was 85% */
+  max-height: 220px;   /*  CONTROL HEIGHT */
+  object-fit: contain;
+  border-radius: 15px;
+}
+
+.project-image img {
+  width: 85%;
+  border-radius: 20px;
+  transition: 0.5s ease;
+}
+.project-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* IMAGE 3D LIFT */
+.project-row:hover img {
+  transform: rotateY(15deg) scale(1.08);
+}
+
+/* ================= CONTENT ================= */
+.project-content {
+  flex: 1;
+  transform: translateZ(30px);
+}
+
+.project-content h2 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.project-content p {
+  margin-top: 8px;   /* ↓ tighter */
+  line-height: 1.5;
+  opacity:0.9;  /* ↓ tighter */
+}
+
+/* ================= TAGS ================= */
+.tags {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tags span {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+/* ================= BUTTONS ================= */
+.buttons {
+  margin-top: 15px;
+  display: flex;
+  gap: 15px;
+}
+/* ================= SMARTFILL (PURPLE/AI) ================= */
+.project-row.smartfill {
+  box-shadow: 0 0 60px rgba(168,85,247,0.25);
+}
+
+.project-row.smartfill:hover {
+  box-shadow:
+    0 30px 60px rgba(0,0,0,0.5),
+    0 0 80px rgba(168,85,247,0.8);
+}
+
+.smartfill .tags span {
+  background: linear-gradient(90deg,#8b5cf6,#ec4899);
+}
+
+
+/* ================= DIARY (BLUE) ================= */
+.project-row.diary {
+  box-shadow: 0 0 60px rgba(59,130,246,0.25);
+}
+
+.project-row.diary:hover {
+  box-shadow:
+    0 30px 60px rgba(0,0,0,0.5),
+    0 0 80px rgba(59,130,246,0.8);
+}
+.project-row {
+  min-height: 260px;
+}
+
+.diary .tags span {
+  background: linear-gradient(90deg,#3b82f6,#06b6d4);
+}
+
+
+/* ================= EXPENSE (GREEN) ================= */
+.project-row.expense {
+  box-shadow: 0 0 60px rgba(34,197,94,0.25);
+}
+
+.project-row.expense:hover {
+  box-shadow:
+    0 30px 60px rgba(0,0,0,0.5),
+    0 0 80px rgba(34,197,94,0.8);
+}
+
+.expense .tags span {
+  background: linear-gradient(90deg,#22c55e,#84cc16);
+}
+/* BULLET STYLE */
+.project-content ul {
+  margin-top: 10px;
+  padding-left: 18px;
+}
+
+.project-content li {
+  margin-bottom: 6px;
+  opacity: 0.9;
+}
+
+/* BUTTON COLORS (FIX YOUR ISSUE) */
+.btn.github {
+  background: black;
+}
+
+.btn.demo {
+  background: linear-gradient(90deg,#6366f1,#ec4899);
+}
+
+/* HOVER DIFFERENCE */
+.btn.github:hover {
+  box-shadow: 0 0 20px rgba(0,0,0,0.8);
+}
+
+.btn.demo:hover {
+  box-shadow: 0 0 25px rgba(236,72,153,0.7);
+}
+/* DIFFERENT PROJECT COLORS */
+.smartfill {
+  box-shadow: 0 0 40px rgba(168,85,247,0.3);
+}
+
+.diary {
+  box-shadow: 0 0 40px rgba(59,130,246,0.3);
+}
+
+.expense {
+  box-shadow: 0 0 40px rgba(34,197,94,0.3);
+}
+
+
+/* .project {
+  display: flex;
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.03);
+  margin-top: 40px;
+  transition: 0.4s;
+}
+
+.project-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-right {
+  flex: 1;
+  padding: 40px;
+}
+
+
+.project:hover {
+  transform: perspective(1000px) rotateX(4deg) rotateY(-4deg) scale(1.02);
+  box-shadow: 
+    0 20px 50px rgba(0,0,0,0.4),
+    0 0 50px rgba(236,72,153,0.6);
+} */
+
+/* CONTACT */
+.contact-title {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.contact-text {
+  text-align: center;
+  margin-top: 40px;
+  opacity: 0.8;
+}
+
+.contact-card {
+  padding: 30px;
+  border-radius: 20px;
+  width: 320px;
+  color: white;
+  transition: 0.4s;
+  text-decoration: none;
+  color: white;
+}
+
+/* EMAIL CARD */
+.contact-card.email {
+  background: linear-gradient(135deg,#ec4899,#8b5cf6);
+}
+
+/* LINKEDIN CARD */
+.contact-card.linkedin {
+  background: linear-gradient(135deg,#3b82f6,#06b6d4);
+}
+
+.contact-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 0 60px rgba(168,85,247,0.6);
+}
+.navbar a {
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  color: #ec4899;
+}
+/* ABOUT IMAGE BOX */
+.about-box {
+  width: 420px;   /* medium size */
+  height: 320px;
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 20px;
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* IMAGE PERFECT FIT */
+.about-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* key fix */
+  border-radius: 15px;
+}
+
+.about-img:hover {
+  transform: scale(1.05);
+  box-shadow: 
+    0 0 50px rgba(168,85,247,0.6),
+    0 0 80px rgba(236,72,153,0.4);
+}
+.about-box:hover {
+  box-shadow: 0 0 40px rgba(168,85,247,0.4);
+  transform: scale(1.02);
+}
+.btn:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 0 25px rgba(236,72,153,0.7);
+}
+
+.footer {
+  text-align: center;
+  padding: 40px 20px;
+  margin-top: 80px;
+  background: rgba(255,255,255,0.02);
+  backdrop-filter: blur(15px);
+}
+
+.footer-text {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 20px;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  font-size: 22px;
+}
+
+.footer-icons a {
+  color: white;
+  transition: 0.3s;
+}
+
+.footer-icons a:hover {
+  transform: translateY(-5px) scale(1.2);
+  color: #ec4899;
+}
+
+/* glowing line like emergent */
+.footer-line {
+  width: 100px;
+  height: 3px;
+  margin: 20px auto 0;
+  background: linear-gradient(90deg,#a855f7,#ec4899);
+  border-radius: 10px;
+}
+
+
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+  background: rgba(255,255,255,0.02);
+  backdrop-filter: blur(10px);
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  animation: rotateY 6s linear infinite;
+}
+.hero-img:hover {
+  animation-play-state: paused;
+}
+@keyframes rotateY {
+  0% {
+    transform: perspective(1000px) rotateY(0deg);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    transform: perspective(1000px) rotateY(360deg);
   }
 }
