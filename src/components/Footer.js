@@ -7,11 +7,11 @@ export default function Footer() {
       </p>
 
       <div className="footer-icons">
-        <a href="https://github.com/LIKHITHH-HUB" target="_blank">
+        <a href="https://github.com/LIKHITHH-HUB" target="_blank" rel="noopener noreferrer">
           <i className="fab fa-github"></i>
         </a>
 
-        <a href="https://www.linkedin.com/in/thandla-likhith-in/" target="_blank">
+        <a href="https://www.linkedin.com/in/thandla-likhith-in/" target="_blank" rel="noopener noreferrer">
           <i className="fab fa-linkedin"></i>
         </a>
 

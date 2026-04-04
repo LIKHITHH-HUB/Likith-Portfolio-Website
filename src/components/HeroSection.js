@@ -1,5 +1,3 @@
-import ThreeDObject from "./ThreeDObject";
-
 export default function HeroSection() {
   return (
     <section id="home" className="section">
