@@ -27,9 +27,10 @@ export default function ProjectsSection() {
             </p>
 
             <div className="tags">
-              <span>React</span>
-              <span>Node.js</span>
-              <span>OpenAI API</span>
+              <span>Html5</span>
+              <span>Css3</span>
+              <span>JavaScript</span>
+              <span>Open AI</span>
             </div>
 
             <div className="buttons">
@@ -49,7 +50,7 @@ export default function ProjectsSection() {
           </div>
 
           <div className="project-content">
-            <h2>EchoNote Diary App</h2>
+            <h2>EchoNote PersonalDiary Application</h2>
 
             <p>
               Developed a full-stack diary application with secure authentication and complete 
@@ -67,7 +68,7 @@ case management
 
             <div className="tags">
               <span>Node.js</span>
-              <span>Express</span>
+              <span>Express.js</span>
               <span>MySQL</span>
             </div>
 
