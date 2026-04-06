@@ -1,6 +1,6 @@
 export default function SkillsSection() {
   return (
-    <section id="skills" className="section">
+    <section id="skills" className="section fade-in">
       <div className="container">
 
         <h1 className="title">Skills</h1>

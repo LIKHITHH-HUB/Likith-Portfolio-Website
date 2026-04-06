@@ -1,6 +1,6 @@
 export default function AboutSection() {
   return (
-    <section id="about" className="section">
+    <section id="about" className="section fade-in">
       <div className="container">
 
         <h1 className="title">About Me</h1>

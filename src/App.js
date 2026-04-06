@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import "./App.css";
 
 import Navbar from "./components/Navbar";
@@ -9,6 +10,21 @@ import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
 
 function App() {
+
+  useEffect(() => {
+    const elements = document.querySelectorAll(".fade-in");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    });
+
+    elements.forEach((el) => observer.observe(el));
+  }, []);
+
   return (
     <>
       <Navbar />

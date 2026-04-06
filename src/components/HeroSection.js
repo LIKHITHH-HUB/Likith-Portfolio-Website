@@ -1,7 +1,8 @@
 export default function HeroSection() {
   return (
-    <section id="home" className="section">
+    <section id="home" className="section fade-in">
       <div className="container" style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        
 
         {/* LEFT */}
         <div style={{ maxWidth: "600px" }}>

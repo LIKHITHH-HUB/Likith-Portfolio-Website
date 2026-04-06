@@ -544,3 +544,128 @@ body {
     transform: perspective(1000px) rotateY(360deg);
   }
 }
+
+
+
+/* ================= MOBILE RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .section {
+    padding: 60px 20px !important;
+  }
+
+  .container {
+    max-width: 100% !important;
+    padding: 0 16px !important;
+  }
+
+  /* ================= NAVBAR FIX ================= */
+  nav {
+    flex-direction: column !important;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 15px !important;
+    text-align: center;
+  }
+
+  nav h3 {
+    font-size: 14px;
+    word-break: break-all;
+  }
+
+  nav div {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px !important;
+  }
+
+  nav a {
+    font-size: 12px;
+  }
+
+  /* ================= HERO SAFE FIX ================= */
+  .container > div {
+    flex-direction: column !important;
+    text-align: center;
+  }
+
+  .container div[style*="maxWidth"] {
+    max-width: 100% !important;
+  }
+
+  /* ================= ABOUT FIX (REAL ISSUE) ================= */
+
+  /* OVERRIDE GRID */
+  #about .container > div {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px;
+  }
+
+  /* REMOVE CARD LOOK */
+  .about-box {
+    width: 100% !important;
+    height: auto !important;
+    padding: 0 !important;
+    background: none !important;
+    backdrop-filter: none !important;
+  }
+
+  /* IMAGE FULL WIDTH */
+  .about-img {
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 15px;
+  }
+
+  /* TEXT FIX */
+  .about-text {
+    text-align: left !important;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* ================= BUTTON FIX ================= */
+  .btn {
+    padding: 10px 15px;
+    font-size: 12px;
+  }
+
+  .container div[style*="gap: 15px"] {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* ================= ORB ================= */
+  .orbWrapper {
+    width: 220px !important;
+    height: 220px !important;
+    margin: auto;
+  }
+
+  .orbInner {
+    width: 220px !important;
+    height: 220px !important;
+  }
+
+  /* ================= PROJECT ================= */
+  .project-row {
+    flex-direction: column !important;
+    text-align: center;
+  }
+
+  .project-image img {
+    width: 200px !important;
+  }
+
+  /* ================= CONTACT ================= */
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
